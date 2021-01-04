@@ -19,6 +19,12 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 
 urlpatterns = [
+    # MY APPS URLS
     path('admin/', admin.site.urls),
-    path('webapp/', include('webapp.urls'))
+    path('memo_app/', include('memo_app.urls')),
+
+    # REST FRAMEWORK URLS
+    path('api/memo_app/', include('memo_app.api.urls', 'memo_api')),
+    path('api/account/', include('account.api.urls', 'account_api')),
+
 ]
